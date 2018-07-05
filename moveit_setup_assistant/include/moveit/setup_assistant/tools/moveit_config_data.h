@@ -135,6 +135,7 @@ public:
   std::string type_;  // type of planner (geometric)
 };
 
+
 MOVEIT_CLASS_FORWARD(MoveItConfigData);
 
 /** \brief This class is shared with all widgets and contains the common configuration data
@@ -273,6 +274,7 @@ public:
   std::vector<OMPLPlannerDescription> getOMPLPlanners();
   bool outputSetupAssistantFile(const std::string& file_path);
   bool outputOMPLPlanningYAML(const std::string& file_path);
+  bool outputSTOMPPlanningYAML(const std::string& file_path);
   bool outputKinematicsYAML(const std::string& file_path);
   bool outputJointLimitsYAML(const std::string& file_path);
   bool outputFakeControllersYAML(const std::string& file_path);
@@ -299,6 +301,7 @@ public:
    * @return bool if the file was read correctly
    */
   bool inputOMPLYAML(const std::string& file_path);
+
 
   /**
    * Input kinematics.yaml file for editing its values
