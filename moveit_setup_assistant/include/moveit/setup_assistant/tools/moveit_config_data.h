@@ -135,7 +135,6 @@ public:
   std::string type_;  // type of planner (geometric)
 };
 
-
 MOVEIT_CLASS_FORWARD(MoveItConfigData);
 
 /** \brief This class is shared with all widgets and contains the common configuration data
@@ -301,7 +300,6 @@ public:
    * @return bool if the file was read correctly
    */
   bool inputOMPLYAML(const std::string& file_path);
-
 
   /**
    * Input kinematics.yaml file for editing its values
