@@ -49,14 +49,11 @@
 #include <moveit/planning_interface/planning_interface.h>
 #include <moveit/trajectory_processing/iterative_time_parameterization.h>
 
-
 #include <moveit/collision_distance_field/collision_detector_allocator_hybrid.h>
 
 #include <tf/transform_listener.h>
 
 #include <moveit/robot_state/conversions.h>
-
-
 
 using namespace chomp;
 
@@ -64,19 +61,16 @@ namespace default_planner_request_adapters
 {
 class CHOMPOptimizerAdapter : public planning_request_adapter::PlanningRequestAdapter
 {
-
-
 public:
   static const std::string DT_PARAM_NAME;
 
   chomp::ChompParameters params_;
-    ChompPlanner chomp_interface_;
-    moveit::core::RobotModelConstPtr robot_model_;
+  ChompPlanner chomp_interface_;
+  moveit::core::RobotModelConstPtr robot_model_;
 
-    boost::shared_ptr<tf::TransformListener> tf_;
+  boost::shared_ptr<tf::TransformListener> tf_;
   CHOMPOptimizerAdapter() : planning_request_adapter::PlanningRequestAdapter(), nh_("~")
   {
-
   }
 
   virtual std::string getDescription() const
@@ -84,23 +78,23 @@ public:
     return "CHOMP Optimizer yo!!@$@#$@%$@#!!";
   }
 
-
   virtual bool adaptAndPlan(const PlannerFn& planner, const planning_scene::PlanningSceneConstPtr& planning_scene,
                             const planning_interface::MotionPlanRequest& req,
                             planning_interface::MotionPlanResponse& res,
                             std::vector<std::size_t>& added_path_index) const
   {
     collision_detection::CollisionDetectorAllocatorPtr hybrid_cd(
-            collision_detection::CollisionDetectorAllocatorHybrid::create());
+        collision_detection::CollisionDetectorAllocatorHybrid::create());
 
-    //planning_interface::PlanningContext planningCOntext;
-    //robot_model_ = planning_scene->getRobotModel();
+    // planning_interface::PlanningContext planningCOntext;
+    // robot_model_ = planning_scene->getRobotModel();
     if (!planning_scene)
     {
       ROS_INFO_STREAM("Configuring New Planning Scene.");
-      planning_scene::PlanningScenePtr planning_scene_ptr(new planning_scene::PlanningScene(planning_scene->getRobotModel()));
+      planning_scene::PlanningScenePtr planning_scene_ptr(
+          new planning_scene::PlanningScene(planning_scene->getRobotModel()));
       planning_scene_ptr->setActiveCollisionDetector(hybrid_cd, true);
-      //planningCOntext.setPlanningScene(planning_scene_ptr);
+      // planningCOntext.setPlanningScene(planning_scene_ptr);
     }
 
     std::cout << "I AM INSIDE CHOMP PLANNING ADAPTER..!!@$e$@#@$^@^@^#$&#^&# " << std::endl;
@@ -127,7 +121,7 @@ public:
     params_.animate_endeffector_segment_ = std::string("r_gripper_tool_frame");
     params_.joint_update_limit_ = 0.1;
     params_.min_clearence_ = 0.2;
-    params_.collision_threshold_= 0.07;
+    params_.collision_threshold_ = 0.07;
     params_.random_jump_amount_ = 1.0;
     params_.use_stochastic_descent_ = true;
 
@@ -138,11 +132,11 @@ public:
 
     bool planning_success;
 
-    if(chompPlanner.solve(planning_scene, req, params_, res2))
+    if (chompPlanner.solve(planning_scene, req, params_, res2))
     {
       res_detailed.trajectory_.resize(1);
-      res_detailed.trajectory_[0] =
-              robot_trajectory::RobotTrajectoryPtr(new robot_trajectory::RobotTrajectory(planning_scene->getRobotModel(), "panda_arm"));
+      res_detailed.trajectory_[0] = robot_trajectory::RobotTrajectoryPtr(
+          new robot_trajectory::RobotTrajectory(planning_scene->getRobotModel(), "panda_arm"));
 
       moveit::core::RobotState start_state(planning_scene->getRobotModel());
       robot_state::robotStateMsgToRobotState(res2.trajectory_start, start_state);
@@ -170,9 +164,6 @@ public:
     bool solved = planner(planning_scene, req, res);
     return solved;
 
-
-
-
     // CALL THE CHOMPPlanner's solve method here and populate the  request, planningSceneCOnstPtr appropriately, the
     // solver will then output a response in the Motion Plan Response
     // then finally call the planner , once this is done it should be good DO IT FOR CHOMP first and then move later to
@@ -181,9 +172,7 @@ public:
 
 private:
   ros::NodeHandle nh_;
-
 };
-
 }
 
 CLASS_LOADER_REGISTER_CLASS(default_planner_request_adapters::CHOMPOptimizerAdapter,
