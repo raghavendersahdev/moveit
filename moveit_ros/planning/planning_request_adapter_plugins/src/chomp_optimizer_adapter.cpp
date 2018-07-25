@@ -88,16 +88,21 @@ public:
 
     // planning_interface::PlanningContext planningCOntext;
     // robot_model_ = planning_scene->getRobotModel();
-    if (!planning_scene)
+    std::cout << planning_scene->getPlanningFrame() << "planning_scene TESTER" << std::endl;
+    // if (!planning_scene)
+    if (true)
     {
-      ROS_INFO_STREAM("Configuring New Planning Scene.");
+      ROS_INFO_STREAM("Configuring New Planning Scene............@!@!#!!");
       planning_scene::PlanningScenePtr planning_scene_ptr(
           new planning_scene::PlanningScene(planning_scene->getRobotModel()));
       planning_scene_ptr->setActiveCollisionDetector(hybrid_cd, true);
-      // planningCOntext.setPlanningScene(planning_scene_ptr);
+      // planning_scene->setActiveCollisionDetector(hybrid_cd, true);
+      // planning_scene_ptr->setPlanningScene();
+      //(new planning_interface::PlanningContext())->setPlanningScene(planning_scene_ptr);
     }
 
     std::cout << "I AM INSIDE CHOMP PLANNING ADAPTER..!!@$e$@#@$^@^@^#$&#^&# " << std::endl;
+
     chomp::ChompParameters params_;
     params_.planning_time_limit_ = 10.0;
     params_.max_iterations_ = 200;
@@ -130,13 +135,20 @@ public:
     planning_interface::MotionPlanDetailedResponse res_detailed;
     moveit_msgs::MotionPlanDetailedResponse res2;
 
+    moveit_msgs::MotionPlanRequest req_moveit_msgs;
+
     bool planning_success;
 
+    bool temp = chompPlanner.solve(planning_scene, req, params_, res2);
+
+    std::cout << chompPlanner.solve(planning_scene, req, params_, res2) << "chomp_solver STATUS" << std::endl;
     if (chompPlanner.solve(planning_scene, req, params_, res2))
     {
       res_detailed.trajectory_.resize(1);
       res_detailed.trajectory_[0] = robot_trajectory::RobotTrajectoryPtr(
           new robot_trajectory::RobotTrajectory(planning_scene->getRobotModel(), "panda_arm"));
+
+      std::cout << res_detailed.trajectory_[0] << " ros_detailed.trajectory_[0] " << std::endl;
 
       moveit::core::RobotState start_state(planning_scene->getRobotModel());
       robot_state::robotStateMsgToRobotState(res2.trajectory_start, start_state);
@@ -152,7 +164,7 @@ public:
       planning_success = false;
     }
 
-    std::cout << res_detailed.trajectory_[0] << " YOYO TRAJECTORY" << std::endl;
+    // std::cout << res_detailed.trajectory_[0] << " YOYO TRAJECTORY" << std::endl;
 
     res.error_code_ = res_detailed.error_code_;
 
