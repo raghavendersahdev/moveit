@@ -46,6 +46,17 @@
 
 #include <chomp_motion_planner/chomp_planner.h>
 #include <chomp_motion_planner/chomp_parameters.h>
+#include <moveit/planning_interface/planning_interface.h>
+#include <moveit/trajectory_processing/iterative_time_parameterization.h>
+
+
+#include <moveit/collision_distance_field/collision_detector_allocator_hybrid.h>
+
+#include <tf/transform_listener.h>
+
+#include <moveit/robot_state/conversions.h>
+
+
 
 using namespace chomp;
 
@@ -53,15 +64,48 @@ namespace default_planner_request_adapters
 {
 class CHOMPOptimizerAdapter : public planning_request_adapter::PlanningRequestAdapter
 {
+
+
 public:
   static const std::string DT_PARAM_NAME;
-  static const std::string JIGGLE_PARAM_NAME;
-  static const std::string ATTEMPTS_PARAM_NAME;
-  chomp::ChompParameters params_;
 
+  chomp::ChompParameters params_;
+    ChompPlanner chomp_interface_;
+    moveit::core::RobotModelConstPtr robot_model_;
+
+    boost::shared_ptr<tf::TransformListener> tf_;
   CHOMPOptimizerAdapter() : planning_request_adapter::PlanningRequestAdapter(), nh_("~")
   {
-    /*params_.planning_time_limit_ = 10.0;
+
+  }
+
+  virtual std::string getDescription() const
+  {
+    return "CHOMP Optimizer yo!!@$@#$@%$@#!!";
+  }
+
+
+  virtual bool adaptAndPlan(const PlannerFn& planner, const planning_scene::PlanningSceneConstPtr& planning_scene,
+                            const planning_interface::MotionPlanRequest& req,
+                            planning_interface::MotionPlanResponse& res,
+                            std::vector<std::size_t>& added_path_index) const
+  {
+    collision_detection::CollisionDetectorAllocatorPtr hybrid_cd(
+            collision_detection::CollisionDetectorAllocatorHybrid::create());
+
+    //planning_interface::PlanningContext planningCOntext;
+    //robot_model_ = planning_scene->getRobotModel();
+    if (!planning_scene)
+    {
+      ROS_INFO_STREAM("Configuring New Planning Scene.");
+      planning_scene::PlanningScenePtr planning_scene_ptr(new planning_scene::PlanningScene(planning_scene->getRobotModel()));
+      planning_scene_ptr->setActiveCollisionDetector(hybrid_cd, true);
+      //planningCOntext.setPlanningScene(planning_scene_ptr);
+    }
+
+    std::cout << "I AM INSIDE CHOMP PLANNING ADAPTER..!!@$e$@#@$^@^@^#$&#^&# " << std::endl;
+    chomp::ChompParameters params_;
+    params_.planning_time_limit_ = 10.0;
     params_.max_iterations_ = 200;
     params_.max_iterations_after_collision_free_ = 5;
     params_.smoothness_cost_weight_ = 0.1;
@@ -85,20 +129,49 @@ public:
     params_.min_clearence_ = 0.2;
     params_.collision_threshold_= 0.07;
     params_.random_jump_amount_ = 1.0;
-    params_.use_stochastic_descent_ = true;*/
-  }
+    params_.use_stochastic_descent_ = true;
 
-  virtual std::string getDescription() const
-  {
-    return "Fix Start State In Collision";
-  }
+    chomp::ChompPlanner chompPlanner;
 
-  virtual bool adaptAndPlan(const PlannerFn& planner, const planning_scene::PlanningSceneConstPtr& planning_scene,
-                            const planning_interface::MotionPlanRequest& req,
-                            planning_interface::MotionPlanResponse& res,
-                            std::vector<std::size_t>& added_path_index) const
-  {
-    chomp::ChompPlanner chompPlanner();
+    planning_interface::MotionPlanDetailedResponse res_detailed;
+    moveit_msgs::MotionPlanDetailedResponse res2;
+
+    bool planning_success;
+
+    if(chompPlanner.solve(planning_scene, req, params_, res2))
+    {
+      res_detailed.trajectory_.resize(1);
+      res_detailed.trajectory_[0] =
+              robot_trajectory::RobotTrajectoryPtr(new robot_trajectory::RobotTrajectory(planning_scene->getRobotModel(), "panda_arm"));
+
+      moveit::core::RobotState start_state(planning_scene->getRobotModel());
+      robot_state::robotStateMsgToRobotState(res2.trajectory_start, start_state);
+      res_detailed.trajectory_[0]->setRobotTrajectoryMsg(start_state, res2.trajectory[0]);
+      res_detailed.description_.push_back("plan");
+      res_detailed.processing_time_ = res2.processing_time;
+      res_detailed.error_code_ = res2.error_code;
+      planning_success = true;
+    }
+    else
+    {
+      res_detailed.error_code_ = res2.error_code;
+      planning_success = false;
+    }
+
+    std::cout << res_detailed.trajectory_[0] << " YOYO TRAJECTORY" << std::endl;
+
+    res.error_code_ = res_detailed.error_code_;
+
+    if (planning_success)
+    {
+      res.trajectory_ = res_detailed.trajectory_[0];
+      res.planning_time_ = res_detailed.processing_time_[0];
+    }
+    bool solved = planner(planning_scene, req, res);
+    return solved;
+
+
+
 
     // CALL THE CHOMPPlanner's solve method here and populate the  request, planningSceneCOnstPtr appropriately, the
     // solver will then output a response in the Motion Plan Response
@@ -108,14 +181,9 @@ public:
 
 private:
   ros::NodeHandle nh_;
-  double max_dt_offset_;
-  double jiggle_fraction_;
-  int sampling_attempts_;
+
 };
 
-const std::string CHOMPOptimizerAdapter::DT_PARAM_NAME = "start_state_max_dt";
-const std::string CHOMPOptimizerAdapter::JIGGLE_PARAM_NAME = "jiggle_fraction";
-const std::string CHOMPOptimizerAdapter::ATTEMPTS_PARAM_NAME = "max_sampling_attempts";
 }
 
 CLASS_LOADER_REGISTER_CLASS(default_planner_request_adapters::CHOMPOptimizerAdapter,
