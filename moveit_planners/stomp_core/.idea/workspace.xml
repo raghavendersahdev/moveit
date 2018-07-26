@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="stomp_core" targetName="clean_test_results_stomp_core" />
+      <config projectName="stomp_core" targetName="roscpp_generate_messages_cpp" />
+      <config projectName="stomp_core" targetName="run_tests_stomp_core_gtest_stomp_core_utest" />
+      <config projectName="stomp_core" targetName="std_msgs_generate_messages_eus" />
+      <config projectName="stomp_core" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="stomp_core" targetName="_run_tests_stomp_core_gtest_stomp_core_utest" />
+      <config projectName="stomp_core" targetName="download_extra_data" />
+      <config projectName="stomp_core" targetName="run_tests" />
+      <config projectName="stomp_core" targetName="run_tests_stomp_core" />
+      <config projectName="stomp_core" targetName="std_msgs_generate_messages_lisp" />
+      <config projectName="stomp_core" targetName="_run_tests_stomp_core" />
+      <config projectName="stomp_core" targetName="roscpp_generate_messages_nodejs" />
+      <config projectName="stomp_core" targetName="stomp_core_utest" />
+      <config projectName="stomp_core" targetName="rosgraph_msgs_generate_messages_nodejs" />
+      <config projectName="stomp_core" targetName="std_msgs_generate_messages_py" />
+      <config projectName="stomp_core" targetName="stomp_core" />
+      <config projectName="stomp_core" targetName="clean_test_results" />
+      <config projectName="stomp_core" targetName="run_tests_stomp_core_gtest" />
+      <config projectName="stomp_core" targetName="roscpp_generate_messages_eus" />
+      <config projectName="stomp_core" targetName="std_msgs_generate_messages_cpp" />
+      <config projectName="stomp_core" targetName="rosgraph_msgs_generate_messages_eus" />
+      <config projectName="stomp_core" targetName="tests" />
+      <config projectName="stomp_core" targetName="doxygen" />
+      <config projectName="stomp_core" targetName="stomp_core_example" />
+      <config projectName="stomp_core" targetName="_run_tests_stomp_core_gtest" />
+      <config projectName="stomp_core" targetName="roscpp_generate_messages_lisp" />
+      <config projectName="stomp_core" targetName="std_msgs_generate_messages_nodejs" />
+      <config projectName="stomp_core" targetName="rosgraph_msgs_generate_messages_lisp" />
+      <config projectName="stomp_core" targetName="rosgraph_msgs_generate_messages_py" />
+      <config projectName="stomp_core" targetName="roscpp_generate_messages_py" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7bb5a35e-90a8-4e64-ba3f-57cce512a5eb" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="stomp.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/stomp.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1777">
+              <caret line="643" column="0" lean-forward="false" selection-start-line="643" selection-start-column="0" selection-end-line="643" selection-end-column="0" />
+              <folding>
+                <element signature="e#1372#1676#0" expanded="false" />
+                <element signature="e#1372#2184#0" expanded="false" />
+                <element signature="e#2186#2555#0" expanded="false" />
+                <element signature="e#2186#3239#0" expanded="false" />
+                <element signature="e#3241#3707#0" expanded="false" />
+                <element signature="e#3241#5398#0" expanded="false" />
+                <element signature="e#5400#5763#0" expanded="false" />
+                <element signature="e#5400#6537#0" expanded="false" />
+                <element signature="e#6565#6688#0" expanded="false" />
+                <element signature="e#6690#6740#0" expanded="false" />
+                <element signature="e#6742#6841#0" expanded="false" />
+                <element signature="e#6843#7183#0" expanded="false" />
+                <element signature="e#7185#7593#0" expanded="false" />
+                <element signature="e#7595#9617#0" expanded="false" />
+                <element signature="e#9619#12838#0" expanded="false" />
+                <element signature="e#12840#13585#0" expanded="false" />
+                <element signature="e#13587#13685#0" expanded="false" />
+                <element signature="e#13687#14131#0" expanded="false" />
+                <element signature="e#14133#17544#0" expanded="false" />
+                <element signature="e#17546#18070#0" expanded="false" />
+                <element signature="e#18072#19133#0" expanded="false" />
+                <element signature="e#19135#19758#0" expanded="false" />
+                <element signature="e#19759#20444#0" expanded="false" />
+                <element signature="e#20446#22980#0" expanded="false" />
+                <element signature="e#22982#23713#0" expanded="false" />
+                <element signature="e#23715#24793#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/stomp_core/utils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/stomp_core/task.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stomp.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/include/stomp_core/stomp.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2754">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="698">
+              <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+              <folding>
+                <element signature="e#969#1762#0" expanded="false" />
+                <element signature="e#1764#3124#0" expanded="false" />
+                <element signature="e#3126#4454#0" expanded="false" />
+                <element signature="e#4456#4651#0" expanded="false" />
+                <element signature="e#4653#5016#0" expanded="false" />
+                <element signature="e#5018#5207#0" expanded="false" />
+                <element signature="e#5209#5410#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="stomp_core" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="stomp_core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stomp_core" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="stomp_core" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stomp_core" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="stomp_core" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="stomp_core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stomp_core" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="stomp_core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.stomp_core_example">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+    </configuration>
+    <configuration name="_run_tests_stomp_core" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="_run_tests_stomp_core" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="_run_tests_stomp_core_gtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="_run_tests_stomp_core_gtest" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="_run_tests_stomp_core_gtest_stomp_core_utest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="_run_tests_stomp_core_gtest_stomp_core_utest" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="clean_test_results" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="clean_test_results" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="clean_test_results_stomp_core" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="clean_test_results_stomp_core" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="download_extra_data" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="download_extra_data" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="doxygen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="doxygen" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="roscpp_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="roscpp_generate_messages_cpp" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="roscpp_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="roscpp_generate_messages_eus" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="roscpp_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="roscpp_generate_messages_lisp" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="roscpp_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="roscpp_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="roscpp_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="roscpp_generate_messages_py" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="rosgraph_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="rosgraph_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="rosgraph_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="rosgraph_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="rosgraph_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="rosgraph_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="rosgraph_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="rosgraph_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="rosgraph_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="rosgraph_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="run_tests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="run_tests" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="run_tests_stomp_core" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="run_tests_stomp_core" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="run_tests_stomp_core_gtest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="run_tests_stomp_core_gtest" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="run_tests_stomp_core_gtest_stomp_core_utest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="run_tests_stomp_core_gtest_stomp_core_utest" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="std_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="std_msgs_generate_messages_cpp" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="std_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="std_msgs_generate_messages_eus" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="std_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="std_msgs_generate_messages_lisp" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="std_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="std_msgs_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="std_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="std_msgs_generate_messages_py" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="stomp_core" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="stomp_core" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <configuration name="stomp_core_example" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="stomp_core_example" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stomp_core" RUN_TARGET_NAME="stomp_core_example">
+      <envs />
+    </configuration>
+    <configuration name="stomp_core_utest" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="stomp_core_utest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="stomp_core" RUN_TARGET_NAME="stomp_core_utest">
+      <envs />
+    </configuration>
+    <configuration name="tests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="stomp_core" TARGET_NAME="tests" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
+    <list size="31">
+      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="1" class="java.lang.String" itemvalue="Application._run_tests_stomp_core" />
+      <item index="2" class="java.lang.String" itemvalue="Application._run_tests_stomp_core_gtest" />
+      <item index="3" class="java.lang.String" itemvalue="Application._run_tests_stomp_core_gtest_stomp_core_utest" />
+      <item index="4" class="java.lang.String" itemvalue="Application.clean_test_results" />
+      <item index="5" class="java.lang.String" itemvalue="Application.clean_test_results_stomp_core" />
+      <item index="6" class="java.lang.String" itemvalue="Application.download_extra_data" />
+      <item index="7" class="java.lang.String" itemvalue="Application.doxygen" />
+      <item index="8" class="java.lang.String" itemvalue="Application.roscpp_generate_messages_cpp" />
+      <item index="9" class="java.lang.String" itemvalue="Application.roscpp_generate_messages_eus" />
+      <item index="10" class="java.lang.String" itemvalue="Application.roscpp_generate_messages_lisp" />
+      <item index="11" class="java.lang.String" itemvalue="Application.roscpp_generate_messages_nodejs" />
+      <item index="12" class="java.lang.String" itemvalue="Application.roscpp_generate_messages_py" />
+      <item index="13" class="java.lang.String" itemvalue="Application.rosgraph_msgs_generate_messages_cpp" />
+      <item index="14" class="java.lang.String" itemvalue="Application.rosgraph_msgs_generate_messages_eus" />
+      <item index="15" class="java.lang.String" itemvalue="Application.rosgraph_msgs_generate_messages_lisp" />
+      <item index="16" class="java.lang.String" itemvalue="Application.rosgraph_msgs_generate_messages_nodejs" />
+      <item index="17" class="java.lang.String" itemvalue="Application.rosgraph_msgs_generate_messages_py" />
+      <item index="18" class="java.lang.String" itemvalue="Application.run_tests" />
+      <item index="19" class="java.lang.String" itemvalue="Application.run_tests_stomp_core" />
+      <item index="20" class="java.lang.String" itemvalue="Application.run_tests_stomp_core_gtest" />
+      <item index="21" class="java.lang.String" itemvalue="Application.run_tests_stomp_core_gtest_stomp_core_utest" />
+      <item index="22" class="java.lang.String" itemvalue="Application.std_msgs_generate_messages_cpp" />
+      <item index="23" class="java.lang.String" itemvalue="Application.std_msgs_generate_messages_eus" />
+      <item index="24" class="java.lang.String" itemvalue="Application.std_msgs_generate_messages_lisp" />
+      <item index="25" class="java.lang.String" itemvalue="Application.std_msgs_generate_messages_nodejs" />
+      <item index="26" class="java.lang.String" itemvalue="Application.std_msgs_generate_messages_py" />
+      <item index="27" class="java.lang.String" itemvalue="Application.stomp_core" />
+      <item index="28" class="java.lang.String" itemvalue="Application.stomp_core_example" />
+      <item index="29" class="java.lang.String" itemvalue="Application.stomp_core_utest" />
+      <item index="30" class="java.lang.String" itemvalue="Application.tests" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bb5a35e-90a8-4e64-ba3f-57cce512a5eb" name="Default" comment="" />
+      <created>1532207039546</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532207039546</updated>
+      <workItem from="1532207040688" duration="2263000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2263000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+          <folding>
+            <element signature="e#969#1762#0" expanded="false" />
+            <element signature="e#1764#3124#0" expanded="false" />
+            <element signature="e#3126#4454#0" expanded="false" />
+            <element signature="e#4456#4651#0" expanded="false" />
+            <element signature="e#4653#5016#0" expanded="false" />
+            <element signature="e#5018#5207#0" expanded="false" />
+            <element signature="e#5209#5410#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stomp.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1777">
+          <caret line="643" column="0" lean-forward="false" selection-start-line="643" selection-start-column="0" selection-end-line="643" selection-end-column="0" />
+          <folding>
+            <element signature="e#1372#1676#0" expanded="false" />
+            <element signature="e#1372#2184#0" expanded="false" />
+            <element signature="e#2186#2555#0" expanded="false" />
+            <element signature="e#2186#3239#0" expanded="false" />
+            <element signature="e#3241#3707#0" expanded="false" />
+            <element signature="e#3241#5398#0" expanded="false" />
+            <element signature="e#5400#5763#0" expanded="false" />
+            <element signature="e#5400#6537#0" expanded="false" />
+            <element signature="e#6565#6688#0" expanded="false" />
+            <element signature="e#6690#6740#0" expanded="false" />
+            <element signature="e#6742#6841#0" expanded="false" />
+            <element signature="e#6843#7183#0" expanded="false" />
+            <element signature="e#7185#7593#0" expanded="false" />
+            <element signature="e#7595#9617#0" expanded="false" />
+            <element signature="e#9619#12838#0" expanded="false" />
+            <element signature="e#12840#13585#0" expanded="false" />
+            <element signature="e#13587#13685#0" expanded="false" />
+            <element signature="e#13687#14131#0" expanded="false" />
+            <element signature="e#14133#17544#0" expanded="false" />
+            <element signature="e#17546#18070#0" expanded="false" />
+            <element signature="e#18072#19133#0" expanded="false" />
+            <element signature="e#19135#19758#0" expanded="false" />
+            <element signature="e#19759#20444#0" expanded="false" />
+            <element signature="e#20446#22980#0" expanded="false" />
+            <element signature="e#22982#23713#0" expanded="false" />
+            <element signature="e#23715#24793#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/stomp_core/utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/stomp_core/task.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/stomp_core/stomp.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2754">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
