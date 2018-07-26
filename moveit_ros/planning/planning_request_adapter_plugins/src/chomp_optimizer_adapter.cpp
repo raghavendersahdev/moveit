@@ -62,8 +62,6 @@ namespace default_planner_request_adapters
 class CHOMPOptimizerAdapter : public planning_request_adapter::PlanningRequestAdapter
 {
 public:
-  static const std::string DT_PARAM_NAME;
-
   chomp::ChompParameters params_;
   ChompPlanner chomp_interface_;
   moveit::core::RobotModelConstPtr robot_model_;
