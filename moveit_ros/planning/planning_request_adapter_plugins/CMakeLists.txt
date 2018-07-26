@@ -35,7 +35,10 @@ include_directories(../../../moveit_planners
         ../../../../industrial_moveit/stomp_core/include
         ../../../moveit_planners/chomp/chomp_motion_planner/include/chomp_motion_planner
         ../../../moveit_planners/chomp/chomp_motion_planner/include/
-        ../../../moveit_planners/chomp/chomp_motion_planner/)
+        ../../../moveit_planners/chomp/chomp_motion_planner/
+        ../../../moveit_experimental/collision_distance_field/include/moveit/collision_distance_field
+        ../../../moveit_experimental/collision_distance_field/include/
+        ../../../moveit_experimental/collision_distance_field/)
 
 add_library(${MOVEIT_LIB_NAME} ${SOURCE_FILES})
 set_target_properties(${MOVEIT_LIB_NAME} PROPERTIES VERSION ${${PROJECT_NAME}_VERSION})
