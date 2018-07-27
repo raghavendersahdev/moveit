@@ -44,8 +44,11 @@
 #include <class_loader/class_loader.hpp>
 #include <ros/ros.h>
 #include <moveit/planning_interface/planning_interface.h>
+#include <stomp_moveit/stomp_planner_manager.h>
 #include <ros/node_handle.h>
 #include <stomp_moveit/stomp_planner.h>
+
+using namespace stomp_moveit;
 
 namespace default_planner_request_adapters
 {
@@ -78,8 +81,44 @@ public:
 
     // TODO LATER THIS WEEK
 
-    std::cout << "I am in STOPM PLanning adapter" << std::endl;
+    std::cout << "I am in STOMP PLanning adapter" << std::endl;
 
+    // stomp_moveit::StompPlanner stomp("panda_arm",  )
+
+    // const planning_scene::PlanningSceneConstPtr& planning_scene
+    // const planning_interface::MotionPlanRequest& req
+    // planning_interface::MotionPlanResponse& res
+
+    planning_interface::MotionPlanDetailedResponse res2;
+    robot_model::RobotModelConstPtr robot_model = planning_scene->getRobotModel();
+    std::string ns = "/move_group";
+
+    /* StompPlannerManager manager;
+     manager.initialize(robot_model, ns);
+
+
+       // initializing response
+       res2.description_.resize(1, "");
+       res2.processing_time_.resize(1);
+       res2.trajectory_.resize(1);
+       res2.error_code_.val = moveit_msgs::MoveItErrorCodes::SUCCESS;
+
+       ros::WallTime start_time = ros::WallTime::now();
+       bool success = false;
+
+       trajectory_msgs::JointTrajectory trajectory;
+       Eigen::MatrixXd parameters;
+       bool planning_success;
+
+       // local stomp config copy
+       //auto config_copy = stomp_config_;
+
+       // look for seed trajectory
+       Eigen::MatrixXd initial_parameters;
+       //bool use_seed = getSeedParameters(initial_parameters);
+
+
+ */
     return planner(planning_scene, req, res);
   }
 

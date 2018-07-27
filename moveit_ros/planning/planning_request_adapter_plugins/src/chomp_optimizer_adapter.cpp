@@ -84,16 +84,33 @@ public:
     collision_detection::CollisionDetectorAllocatorPtr hybrid_cd(
         collision_detection::CollisionDetectorAllocatorHybrid::create());
 
+    collision_detection::WorldPtr world = collision_detection::WorldPtr(new collision_detection::World());
+    planning_scene::PlanningScene planning_scene2(planning_scene->getRobotModel(), world);
+
+    planning_scene2.setActiveCollisionDetector(hybrid_cd, true);
+
+    std::cout << "planning scene collision detector name $#@$!@$%!$::%1251 : "
+              << planning_scene2.getActiveCollisionDetectorName() << std::endl;
+
+    // const planning_scene::PlanningSceneConstPtr& planning_scene_const_version = planning_scene2;
+    // //planning_scene2.getParent();
+
+    // planning_scene::PlanningScene.clone(planning_scene_const_version);
+
+    // hybrid_cd.
     // planning_interface::PlanningContext planningCOntext;
     // robot_model_ = planning_scene->getRobotModel();
     std::cout << planning_scene->getPlanningFrame() << "planning_scene TESTER" << std::endl;
+    std::cout << planning_scene2.getPlanningFrame() << "planning_scene TESTER" << std::endl;
     // if (!planning_scene)
+    // planning_scene::PlanningScenePtr& planning_scene_2 = new planning_scene::PlanningScene(planning);
     if (true)
     {
-      ROS_INFO_STREAM("Configuring New Planning Scene............@!@!#!!");
+      ROS_INFO_STREAM("Configuring New Planning Scene ............ @!@!#!!");
       planning_scene::PlanningScenePtr planning_scene_ptr(
           new planning_scene::PlanningScene(planning_scene->getRobotModel()));
       planning_scene_ptr->setActiveCollisionDetector(hybrid_cd, true);
+
       // planning_scene->setActiveCollisionDetector(hybrid_cd, true);
       // planning_scene_ptr->setPlanningScene();
       //(new planning_interface::PlanningContext())->setPlanningScene(planning_scene_ptr);
@@ -101,6 +118,7 @@ public:
 
     std::cout << "I AM INSIDE CHOMP PLANNING ADAPTER..!!@$e$@#@$^@^@^#$&#^&# " << std::endl;
 
+    // need to get these from chomp_planning.yaml file later, just for testing right now
     chomp::ChompParameters params_;
     params_.planning_time_limit_ = 10.0;
     params_.max_iterations_ = 200;
@@ -139,14 +157,14 @@ public:
 
     bool temp = chompPlanner.solve(planning_scene, req, params_, res2);
 
-    std::cout << chompPlanner.solve(planning_scene, req, params_, res2) << "chomp_solver STATUS" << std::endl;
-    if (chompPlanner.solve(planning_scene, req, params_, res2))
+    std::cout << temp << "chomp_solver STATUS" << std::endl;
+    if (temp)
     {
       res_detailed.trajectory_.resize(1);
       res_detailed.trajectory_[0] = robot_trajectory::RobotTrajectoryPtr(
           new robot_trajectory::RobotTrajectory(planning_scene->getRobotModel(), "panda_arm"));
 
-      std::cout << res_detailed.trajectory_[0] << " ros_detailed.trajectory_[0] " << std::endl;
+      // std::cout << res_detailed.trajectory_[0] << " ros_detailed.trajectory_[0] " << std::endl;
 
       moveit::core::RobotState start_state(planning_scene->getRobotModel());
       robot_state::robotStateMsgToRobotState(res2.trajectory_start, start_state);
