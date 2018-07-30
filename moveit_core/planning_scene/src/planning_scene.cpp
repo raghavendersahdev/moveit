@@ -47,7 +47,7 @@
 #include <eigen_conversions/eigen_msg.h>
 #include <memory>
 #include <set>
-
+#include <stdio.h>
 namespace planning_scene
 {
 const std::string PlanningScene::OCTOMAP_NS = "<octomap>";
@@ -321,6 +321,8 @@ void PlanningScene::setActiveCollisionDetector(const collision_detection::Collis
   {
     CollisionDetectorPtr p;
     CollisionDetectorIterator it = collision_.find(allocator->getName());
+
+    std::cout << "inside setActiveCollisionDetector " << allocator->getName() << std::endl;
     if (it != collision_.end())
       p = it->second;
 
@@ -356,6 +358,13 @@ bool PlanningScene::setActiveCollisionDetector(const std::string& collision_dete
     return false;
   }
 }
+
+// const void PlanningScene::setActiveCollisionDetector() const
+//{
+// collision_["hybrid"] = nullptr;
+// active_collision_ = nullptr;
+// return true;
+//}
 
 void PlanningScene::getCollisionDetectorNames(std::vector<std::string>& names) const
 {

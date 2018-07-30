@@ -73,7 +73,7 @@ public:
 
   virtual std::string getDescription() const
   {
-    return "CHOMP Optimizer yo!!@$@#$@%$@#!!";
+    return "CHOMP Optimizer !!@$@#$@%$@#!!";
   }
 
   virtual bool adaptAndPlan(const PlannerFn& planner, const planning_scene::PlanningSceneConstPtr& planning_scene,
@@ -81,18 +81,28 @@ public:
                             planning_interface::MotionPlanResponse& res,
                             std::vector<std::size_t>& added_path_index) const
   {
+    bool solved = planner(planning_scene, req, res);
+
     collision_detection::CollisionDetectorAllocatorPtr hybrid_cd(
         collision_detection::CollisionDetectorAllocatorHybrid::create());
 
-    collision_detection::WorldPtr world = collision_detection::WorldPtr(new collision_detection::World());
-    planning_scene::PlanningScene planning_scene2(planning_scene->getRobotModel(), world);
+    // collision_detection::WorldPtr world = planning_scene->world_ ; // collision_detection::WorldPtr(new
+    // collision_detection::World());
+    // planning_scene::PlanningScene planning_scene2(planning_scene->getRobotModel(), world);
 
-    planning_scene2.setActiveCollisionDetector(hybrid_cd, true);
+    // planning_scene2.setActiveCollisionDetector(hybrid_cd, true);
 
-    std::cout << "planning scene collision detector name $#@$!@$%!$::%1251 : "
-              << planning_scene2.getActiveCollisionDetectorName() << std::endl;
+    // planning_interface::PlanningContext dummy("panda", "group");
 
-    // const planning_scene::PlanningSceneConstPtr& planning_scene_const_version = planning_scene2;
+    // std::cout << " planning_scene2->getActiveCollisionDetector():::: " <<
+    // planning_scene2.getActiveCollisionDetectorName() << std::endl;
+
+    // planning_scene::PlanningScenePtr planning_scene_ptr2 = planning_scene2.diff();
+
+    // std::cout << "planning scene collision detector name $#@$!@$%!$::%1251 : "
+    //          << planning_scene2.getActiveCollisionDetectorName() << std::endl;
+
+    // const planning_scene::PlanningSceneConstPtr& planning_scene_const_version = planning_scene2.getParent();
     // //planning_scene2.getParent();
 
     // planning_scene::PlanningScene.clone(planning_scene_const_version);
@@ -100,19 +110,28 @@ public:
     // hybrid_cd.
     // planning_interface::PlanningContext planningCOntext;
     // robot_model_ = planning_scene->getRobotModel();
-    std::cout << planning_scene->getPlanningFrame() << "planning_scene TESTER" << std::endl;
-    std::cout << planning_scene2.getPlanningFrame() << "planning_scene TESTER" << std::endl;
+    // std::cout << planning_scene->getPlanningFrame() << "planning_scene TESTER" << std::endl;
+    // std::cout << planning_scene2.getPlanningFrame() << "planning_scene TESTER" << std::endl;
+
     // if (!planning_scene)
     // planning_scene::PlanningScenePtr& planning_scene_2 = new planning_scene::PlanningScene(planning);
     if (true)
     {
       ROS_INFO_STREAM("Configuring New Planning Scene ............ @!@!#!!");
-      planning_scene::PlanningScenePtr planning_scene_ptr(
-          new planning_scene::PlanningScene(planning_scene->getRobotModel()));
-      planning_scene_ptr->setActiveCollisionDetector(hybrid_cd, true);
+      // planning_scene::PlanningScenePtr planning_scene_ptr(
+      //    new planning_scene::PlanningScene(planning_scene->getRobotModel()));
+      // planning_scene_ptr->setActiveCollisionDetector(hybrid_cd, true);
 
-      // planning_scene->setActiveCollisionDetector(hybrid_cd, true);
-      // planning_scene_ptr->setPlanningScene();
+      // std::cout << " planning_scene->getActiveCollisionDetector():::: " <<
+      // planning_scene->getActiveCollisionDetectorName() << std::endl;
+      // std::cout << " planning_scene->getActiveCollisionDetector():::: " <<
+      // planning_scene_ptr->getActiveCollisionDetectorName() << std::endl;
+
+      // planning_scene::PlanningScene pp = *planning_scene.get();
+      //(*planning_scene.get()).setActiveCollisionDetector(hybrid_cd, true);
+      planning_scene->setActiveCollisionDetector2(hybrid_cd, true);
+      // planning_scene->setActiveCollisionDetector();
+      // planning_scene->setPlanningScene();
       //(new planning_interface::PlanningContext())->setPlanningScene(planning_scene_ptr);
     }
 
@@ -189,7 +208,8 @@ public:
       res.trajectory_ = res_detailed.trajectory_[0];
       res.planning_time_ = res_detailed.processing_time_[0];
     }
-    bool solved = planner(planning_scene, req, res);
+    // bool solved = planner(planning_scene, req, res);
+
     return solved;
 
     // CALL THE CHOMPPlanner's solve method here and populate the  request, planningSceneCOnstPtr appropriately, the
