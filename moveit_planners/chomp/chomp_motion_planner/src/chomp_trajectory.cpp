@@ -253,4 +253,8 @@ void ChompTrajectory::fillInMinJerk()
   }
 }
 
+void ChompTrajectory::fillInFromOMPL()
+{
+}
+
 }  // namespace chomp
