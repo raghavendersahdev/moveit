@@ -125,8 +125,6 @@ bool ChompPlanner::solve(const planning_scene::PlanningSceneConstPtr& planning_s
       }
     }
   }
-  std::cout << trajectory.getTrajectory() << " 1. complete initialized TRAJECTORY in CHOMP_PLANNER..!!!!!" << std::endl;
-  std::cout << trajectory.getTrajectory().size() << " 1. size_trajectory" << std::endl;
 
   const std::vector<std::string>& active_joint_names = model_group->getActiveJointModelNames();
   const Eigen::MatrixXd goal_state = trajectory.getTrajectoryPoint(goal_index);
@@ -153,6 +151,8 @@ bool ChompPlanner::solve(const planning_scene::PlanningSceneConstPtr& planning_s
   else
     ROS_ERROR_STREAM_NAMED("chomp_planner", "invalid interpolation method specified in the chomp_planner file");
 
+  ROS_INFO("CHOMP trajectory initialized using method: %s ", (params.trajectory_initialization_method_).c_str());
+
   // optimize!
   moveit::core::RobotState start_state(planning_scene->getCurrentState());
   moveit::core::robotStateMsgToRobotState(req.start_state, start_state);
@@ -168,18 +168,12 @@ bool ChompPlanner::solve(const planning_scene::PlanningSceneConstPtr& planning_s
     return false;
   }
   ROS_DEBUG_NAMED("chomp_planner", "Optimization took %f sec to create", (ros::WallTime::now() - create_time).toSec());
-  std::cout << trajectory.getTrajectory() << " 3. complete un-optimized TRAJECTORY in CHOMP_PLANNER..!!!!!"
-            << std::endl;
-  std::cout << trajectory.getTrajectory().size() << " 3. size_trajectory" << std::endl;
 
   optimizer.optimize();
   ROS_DEBUG_NAMED("chomp_planner", "Optimization actually took %f sec to run",
                   (ros::WallTime::now() - create_time).toSec());
   create_time = ros::WallTime::now();
   // assume that the trajectory is now optimized, fill in the output structure:
-
-  std::cout << trajectory.getTrajectory() << " 4. complete optimized TRAJECTORY in CHOMP_PLANNER..!!!!!" << std::endl;
-  std::cout << trajectory.getTrajectory().size() << " 4. size_trajectory" << std::endl;
 
   ROS_DEBUG_NAMED("chomp_planner", "Output trajectory has %d joints", trajectory.getNumJoints());
 
