@@ -291,6 +291,14 @@ void ChompTrajectory::fillInFromOMPL(moveit_msgs::MotionPlanDetailedResponse& re
       trajectory_row_index++;
     }  // end of if
   }    // end of for loop for loading in the trajectory poses/rows
+
+  if (num_chomp_trajectory_points < num_response_points)
+    for (int i = 0, j = 0; i < num_chomp_trajectory_points; i++, j++)
+    {
+      for (size_t k = 0; k < num_joints_trajectory; k++)
+      {
+      }
+    }
 }
 
 }  // namespace chomp

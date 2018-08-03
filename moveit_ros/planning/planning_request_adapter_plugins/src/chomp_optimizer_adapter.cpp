@@ -205,7 +205,7 @@ public:
     bool planning_success;
 
     bool temp = chompPlanner.solve(planning_scene, req, params_, res2);
-
+    std::cout << temp << " CHOMP solver status " << std::endl;
     if (temp)
     {
       res_detailed.trajectory_.resize(1);
@@ -228,10 +228,34 @@ public:
 
     res.error_code_ = res_detailed.error_code_;
 
+    std::cout << planning_success << " planning_success status " << std::endl;
     if (planning_success)
     {
       res.trajectory_ = res_detailed.trajectory_[0];
       res.planning_time_ = res_detailed.processing_time_[0];
+    }
+    std::cout << planning_success << " CHOMP planning_success status " << std::endl;
+    std::cout << solved << " solved status OMPL status " << std::endl;
+
+    std::cout << res.trajectory_ << " Trajectory after OPTIMIZATION 11 11 11 11" << std::endl;
+
+    int num_WayPoints = res.trajectory_->getWayPointCount();
+    // int num_joints = res.trajectory_->getJoints();
+    std::cout << num_WayPoints << " joint trajectory" << std::endl;
+
+    moveit_msgs::RobotTrajectory trajectory_msgs4;             // = new moveit_msgs::MotionPlanResponse();
+    res.trajectory_->getRobotTrajectoryMsg(trajectory_msgs4);  //.joint_trajectory.points.size();
+    for (int i = 0; i < num_WayPoints; i++)
+    {
+      // res.trajectory[0].joint_trajectory.points[i].positions.resize(trajectory.getNumJoints());
+      for (size_t j = 0; j < trajectory_msgs4.joint_trajectory.points[i].positions.size(); j++)
+      {
+        std::cout << trajectory_msgs4.joint_trajectory.points[i].positions[j] << " ";
+      }
+      std::cout << std::endl;
+      // Setting invalid timestamps.
+      // Further filtering is required to set valid timestamps accounting for velocity and acceleration constraints.
+      // res.trajectory[0].joint_trajectory.points[i].time_from_start = ros::Duration(0.0);
     }
 
     return solved;

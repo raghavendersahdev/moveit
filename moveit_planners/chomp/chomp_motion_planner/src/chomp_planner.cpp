@@ -177,6 +177,8 @@ bool ChompPlanner::solve(const planning_scene::PlanningSceneConstPtr& planning_s
 
   ROS_DEBUG_NAMED("chomp_planner", "Output trajectory has %d joints", trajectory.getNumJoints());
 
+  std::cout << trajectory.getTrajectory() << " Trajectory after OPTIMIZATION 11 11 11 11" << std::endl;
+
   res.trajectory.resize(1);
 
   res.trajectory[0].joint_trajectory.joint_names = active_joint_names;
@@ -196,6 +198,8 @@ bool ChompPlanner::solve(const planning_scene::PlanningSceneConstPtr& planning_s
     // Further filtering is required to set valid timestamps accounting for velocity and acceleration constraints.
     res.trajectory[0].joint_trajectory.points[i].time_from_start = ros::Duration(0.0);
   }
+
+  std::cout << trajectory.getTrajectory() << " Trajectory after OPTIMIZATION 22 22 22 22 " << std::endl;
 
   ROS_DEBUG_NAMED("chomp_planner", "Bottom took %f sec to create", (ros::WallTime::now() - create_time).toSec());
   ROS_DEBUG_NAMED("chomp_planner", "Serviced planning request in %f wall-seconds, trajectory duration is %f",
